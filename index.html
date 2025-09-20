@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tic-Tac-Toe</title>
+  <link rel="icon" href="./image/icon.png" type="image/x-icon">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="flex-center">
+  <!-- Welcome Screen -->
+  <div id="home" class="flex-center">
+    <h1>TIC-TAC-TOE</h1>
+    <button id="home-btn">
+      Let's Play
+    </button>
+  </div>
+
+  <main id="main-content" class="hidden">
+    <!-- Player Input Form -->
+    <div id="player-form">
+      <h2>
+        <i class="fa-solid fa-xmark" style="color: #E3FF00"></i>
+        <i class="fa-solid fa-o" style="color: #80FF00"></i>
+      </h2>
+      <div class="space-y-4">
+        <div>
+          <label for="game-mode" class="text-medium-sm">Mode</label>
+          <select id="game-mode" class="input-field">
+            <option value="pvp" selected>Player vs Player</option>
+            <option value="pvc">Player vs Computer</option>
+          </select>
+        </div>
+        <div>
+          <label for="player1" class="text-medium-sm">Player 1</label>
+          <input type="text" id="player1" placeholder="Player 1 Name" class="input-field" value="Player 1" />
+        </div>
+        <!-- Player 1 Icons -->
+        <div id="player1-icons">
+        <button type="button" data-icon="fa-star" data-color="#FBBF24" aria-label="Star Icon" class="icon-button hover:text-yellow-500">
+            <i class="fa-solid fa-star"></i>
+        </button>
+        <button type="button" data-icon="fa-heart" data-color="#dc2626" aria-label="Heart Icon" class="icon-button hover:text-red-600">
+            <i class="fa-solid fa-heart"></i>
+        </button>
+        <button type="button" data-icon="fa-fire" data-color="#EA580C" aria-label="Fire Icon" class="icon-button hover:text-orange-600">
+            <i class="fa-solid fa-fire"></i>
+        </button>
+        <button type="button" data-icon="fa-ghost" data-color="#7C3AED" aria-label="Ghost Icon" class="icon-button hover:text-violet-600">
+          <i class="fa-solid fa-ghost"></i>
+        </button>
+        <button type="button" data-icon="fa-sun" data-color="#FDE047" aria-label="Sun Icon" class="icon-button hover:text-yellow-300">
+          <i class="fa-solid fa-sun"></i>
+        </button>
+        <button type="button" data-icon="fa-moon" data-color="#6B7280" aria-label="Moon Icon" class="icon-button hover:text-gray-500">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        </div>
+
+        <div id="player2-container">
+          <label class="text-medium-sm">Player 2</label>
+          <input type="text" id="player2" placeholder="Player 2 Name" 
+                 class="input-field" value="Player 2" />
+          <!-- Player 2 Icons -->
+          <div id="player2-icons" class="flex gap-4 justify-center mt-2">
+          <button type="button" data-icon="fa-star" data-color="#FBBF24" aria-label="Star Icon" class="icon-button hover:text-yellow-500">
+                <i class="fa-solid fa-star"></i>
+          </button>
+          <button type="button" data-icon="fa-heart" data-color="#dc2626" aria-label="Heart Icon" class="icon-button hover:text-red-600">
+              <i class="fa-solid fa-heart"></i>
+          </button>
+          <button type="button" data-icon="fa-fire" data-color="#EA580C" aria-label="Fire Icon" class="icon-button hover:text-orange-600">
+              <i class="fa-solid fa-fire"></i>
+          </button>
+          <button type="button" data-icon="fa-ghost" data-color="#7C3AED" aria-label="Ghost Icon" class="icon-button hover:text-violet-600">
+            <i class="fa-solid fa-ghost"></i>
+          </button>
+          <button type="button" data-icon="fa-sun" data-color="#FDE047" aria-label="Sun Icon" class="icon-button hover:text-yellow-300">
+            <i class="fa-solid fa-sun"></i>
+          </button>
+          <button type="button" data-icon="fa-moon" data-color="#6B7280" aria-label="Moon Icon" class="icon-button hover:text-gray-500">
+            <i class="fa-solid fa-moon"></i>
+          </button>
+          </div>
+        </div>
+        <button id="start-game">Start Game</button>
+      </div>
+    </div>
+
+    <!-- Game Board -->
+    <div id="game-container" class="hidden">
+      <div class="flex justify-between items-center mb-6">
+        <div id="current-player"></div>
+        <button id="restart-game">Restart</button>
+      </div>
+      
+      <div id="board">
+        <!-- Cells will be generated here -->
+      </div>
+      
+      <div id="message"></div>
+    </div>
+  </main>
+
+    <!-- Modal -->
+    <div id="result-modal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden z-50">
+        <div>
+            <h2 id="modal-message"></h2>
+            <button id="modal-close-btn">Close</button>
+        </div>
+    </div>
+    <script type="module" src="./script/main.js" defer></script>
+</body>
+</html>
